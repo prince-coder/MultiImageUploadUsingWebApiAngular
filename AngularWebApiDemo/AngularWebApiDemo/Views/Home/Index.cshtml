@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div  ng-app="MyApp" ng-controller="EmployeeController" class="container">
+    <strong class="error">{{ error }}</strong>
+    <table class="table table-bordered table-hover" style="width:800px">
+
+        <tr>
+
+            <th>#</th>
+
+            <td>Employee Name</td>
+
+            <th>City</th>
+
+            <th>Salary</th>
+
+            <th>Gender</th>
+</tr>
+        <tr ng-repeat="Employee in Employees">
+            <td>
+                <strong>{{ Employee.EmpId }}</strong>
+
+            </td>
+            <td>
+                <strong>{{ Employee.EmpName }}</strong>
+
+            </td>
+            <td>
+                <strong>{{ Employee.EmpCity }}</strong>
+
+            </td>
+
+            <td>
+                <strong>{{ Employee.Salary }}</strong>
+
+            </td>
+
+            <td>
+                <strong>{{ Employee.gender }}</strong>
+
+            </td>
+
+        </tr>
+
+
+    </table>
+</div>
