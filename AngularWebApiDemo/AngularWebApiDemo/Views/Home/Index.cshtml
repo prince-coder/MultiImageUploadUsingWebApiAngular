@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div  ng-app="MyApp" ng-controller="EmployeeController" class="container">
+    <strong class="error">{{ error }}</strong>
+    <p data-ng-hide="addMode"><a data-ng-click="toggleAdd()" href="javascript:;" class="btn btn-primary">Add New</a></p>
+    <form name="addEmployee" data-ng-show="addMode" style="width:600px;margin:0px auto;">
+        <label>Employee Name:</label><input type="text" data-ng-model="newEmployee.EmpName" required />
+        <label>City:</label><input type="text" data-ng-model="newEmployee.EmpCity" required />
+        <label>Salary:</label><input type="text" data-ng-model="newEmployee.Salary" required />
+        <label>Gender:</label>
+        <input type="radio" value="male" data-ng-model="newEmployee.gender"  />Male
+        <input type="radio" value="Female" data-ng-model="newEmployee.gender"  />Female
+        <br />
+        <br />
+        <input type="submit" value="Add" data-ng-click="add()" data-ng-disabled="!addEmployee.$valid" class="btn btn-primary" />
+        <input type="button" value="Cancel" data-ng-click="toggleAdd()" class="btn btn-primary" />
+        <br /><br />
+    </form>
+    <table class="table table-bordered table-hover" style="width:800px">
+
+        <tr>
+
+            <th>#</th>
+
+            <td>Employee Name</td>
+
+            <th>City</th>
+
+            <th>Salary</th>
+
+            <th>Gender</th>
+</tr>
+        <tr ng-repeat="Employee in Employees">
+            <td>
+                
+                <strong ng-hide="Employee.editMode">{{ Employee.EmpId }}</strong>
+
+            </td>
+            <td>
+
+                <p ng-hide="Employee.editMode">{{ Employee.EmpName }}</p>
+                <input type="text" ng-show="Employee.editMode" ng-model="Employee.EmpName" />
+
+            </td>
+            <td>
+                <p ng-hide="Employee.editMode">{{ Employee.EmpCity }}</p>
+                <input type="text" ng-show="Employee.editMode" ng-model="Employee.EmpCity" />
+                
+
+            </td>
+
+            <td>
+                <p ng-hide="Employee.editMode">{{ Employee.Salary }}</p>
+                <input type="text" ng-show="Employee.editMode" ng-model="Employee.Salary" />
+                
+            </td>
+
+            <td>
+                <p ng-hide="Employee.editMode">{{ Employee.gender }}</p>
+                <input type="radio" value="Male" ng-show="Employee.editMode" ng-model="Employee.gender" />
+                <input type="radio" value="Female" ng-show="Employee.editMode" ng-model="Employee.gender" />
+
+            </td>
+            <td>
+
+                <p data-ng-hide="Employee.editMode"><a data-ng-click="toggleEdit(Employee)" href="javascript:;">Edit</a> | <a data-ng-click="deleteEmployee(Employee)" href="javascript:;">Delete</a></p>
+                <p data-ng-show="Employee.editMode"><a data-ng-click="save(Employee)" href="javascript:;">Save</a> | <a data-ng-click="toggleEdit(Employee)" href="javascript:;">Cancel</a></p>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
