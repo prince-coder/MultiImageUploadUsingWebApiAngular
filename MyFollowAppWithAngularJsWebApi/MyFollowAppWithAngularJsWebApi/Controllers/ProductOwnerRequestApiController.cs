@@ -79,7 +79,7 @@ namespace MyFollowAppWithAngularJsWebApi.Controllers
                 mail.To.Add(mailTo);
                 mail.From = new MailAddress("info.myfollow@gmail.com");
                 mail.Subject = "Registration Request Accepted";
-                string URL = string.Format("http://localhost:60847/ProductOwner/Create?Name={1}&Email={0}&CompanyName={2}", mailTo, name, companyName);
+                string URL = string.Format("http://localhost:60847/MyFollow/Create?Name={1}&Email={0}&CompanyName={2}&Role=ProductOwner", mailTo, name, companyName);
                 mail.Body = string.Format("Dear {0}, <br/><br/><br/> Your Request for Product Owner Registration has been Approved. <br/>" +
                  "please click on the below link to complete your registration:<br/>{1}", name, URL);
                 mail.IsBodyHtml = true;

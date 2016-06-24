@@ -6,9 +6,6 @@
 
 <h2>Add Product Owner Request</h2>
 
-
-
-    
     <div ng-app="MyApp" ng-controller="ProductOwnerRequestController">
         <strong class="error">{{error}}</strong>
     <div class="form-horizontal">
@@ -28,7 +25,7 @@
                <div class="col-md-10">
                    <input type="email" name="Email" placeholder="Enter Email Address" ng-required="true"  class="form-control" ng-model="ProductOwnerRequest.Email" />
                    <p ng-show="AddData.Email.$error.required && (AddData.Email.$dirty || submitted)" class="help-block">Email is Required</p>
-                   <p ng-show="AddData.Email.$valid && (AddData.Email.$dirty || submitted)" class="help-block">Please Enter Valid Email Address</p>
+                   <p ng-show="AddData.Email.$invalid && (AddData.Email.$dirty || submitted)" class="help-block">Please Enter Valid Email Address</p>
                </div>
            </div>
 
@@ -43,7 +40,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" ng-click="SaveData()" class="btn btn-default" />
+                <input type="submit" value="submit" ng-click="SaveData()" class="btn btn-default" />
             </div>
         </div>
            </form>

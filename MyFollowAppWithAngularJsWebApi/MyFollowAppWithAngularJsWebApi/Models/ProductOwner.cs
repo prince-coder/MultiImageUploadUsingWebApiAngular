@@ -20,6 +20,6 @@ namespace MyFollowAppWithAngularJsWebApi.Models
         public string FacebookPageURL { get; set; }
         public virtual MyFollow MyFollow { get; set; }
         public ICollection<ProductDetails> ProductDetails { get; set; }
-        public virtual Admin Admin { get; set; }
+        
     }
 }

@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MyFollowController.cs" />
     <Compile Include="Controllers\ProductOwnerController.cs" />
     <Compile Include="Controllers\ProductOwnerRequestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1062,11 +1063,12 @@
     <Content Include="Views\ProductOwnerRequest\Message.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\ProductOwnerRequest\List.cshtml" />
+    <Content Include="Views\MyFollow\Create.cshtml" />
+    <Content Include="Views\ProductOwner\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\ProductOwner\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
